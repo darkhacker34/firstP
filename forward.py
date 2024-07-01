@@ -24,7 +24,14 @@ async def start_msg(client, msg):
   
 @bot.on_message(filters.channel & filters.sticker & filters.incoming)
 async def incoming(client, msg):
-  await msg.forward(-1001613693052)
+  cap = msg.caption
+  await msg.forward(chat_id="-1001613693052",
+                    from_chat_id="-1002201429723",
+                    protect_content=True,
+                    disable_notification=False,
+                    caption=f"{cap}"
+                    
+                   )
 
 print("Bot started!")
 bot.run()
