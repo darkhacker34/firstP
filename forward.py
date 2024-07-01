@@ -17,12 +17,14 @@ bot = Client(
   bot_token=bot_token,
   )
   
-@bot.on_message(filters.command("start"))
+@bot.on_message(filters.command("start") & filters.private)
 async def start_msg(client, msg):
   user_men = msg.from_user.mention
-  ST = await msg.reply_text(f"Helo {user_men}")
-  await asyncio.sleep(2)
-  await ST.delete()
+  await msg.reply_text(f"Helo {user_men}")
+  
+@bot.on_message(filters.channel & filters.sticker & filters.incoming)
+async def incoming(client, msg):
+  await msg.forward(-1001613693052)
 
 print("Bot started!")
 bot.run()
