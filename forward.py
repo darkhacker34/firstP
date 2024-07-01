@@ -1,6 +1,7 @@
-
+from dotenv import load_dotenv, dotenv_values 
 from pyrogram import Client, filters
 import os
+
 
 NIK = Client (
   name="dark",
