@@ -19,10 +19,6 @@ bot = Client(
   bot_token=bot_token,
   )
 
-
-
-bot.run(bot, host="0.0.0.0", port=port)
-
 @bot.on_message(filters.command("start") & filters.private)
 async def start_msg(client, msg):
   user_men = msg.from_user.mention
@@ -33,4 +29,4 @@ async def incoming(client, msg):
   await msg.forward("-1001613693052")
   
 print("Bot started!")
-bot.run()
+bot.run(bot, host="0.0.0.0", port=port)
