@@ -2,4 +2,3 @@ pyrogram
 tgcrypto
 python-dotenv
 requests
-flask
