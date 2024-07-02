@@ -10,15 +10,12 @@ api_id = os.getenv('API_ID', '')
 api_hash = os.getenv('API_HASH', '')
 bot_token = os.getenv('BOT_TOKEN', '')
 
-print("Bot Logging...")
-
 bot = Client(
   "dark",
   api_id=api_id,
   api_hash=api_hash,
   bot_token=bot_token,
   )
-  print("Bot login successfully")
 
 @bot.on_message(filters.command("start") & filters.private)
 async def start_msg(client, msg):
