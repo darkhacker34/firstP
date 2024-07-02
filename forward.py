@@ -19,7 +19,6 @@ bot = Client(
 
 @bot.on_message(filters.command("start") & filters.private)
 async def start_msg(client, msg):
-  await print("start command")
   user_men = msg.from_user.mention
   await msg.reply_text(f"Helo {user_men}")
   
