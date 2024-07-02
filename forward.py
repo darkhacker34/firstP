@@ -29,4 +29,4 @@ async def incoming(client, msg):
   await msg.forward("-1001613693052")
   
 print("Bot started!")
-bot.run(bot, port=port)
+bot.run()
