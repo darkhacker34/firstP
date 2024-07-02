@@ -1,7 +1,8 @@
 #test bot hahaha
 from pyrogram import Client, filters
 from dotenv import load_dotenv, dotenv_values
-import os, environ
+import os
+from os import environ
 import asyncio
 from webcode import bot_run
 from aiohttp import web as webserver
