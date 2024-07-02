@@ -9,6 +9,8 @@ config = load_dotenv("config.env")
 api_id = os.getenv('API_ID', '')
 api_hash = os.getenv('API_HASH', '')
 bot_token = os.getenv('BOT_TOKEN', '')
+port = os.getenv("PORT", 8000)
+
 
 bot = Client(
   "dark",
@@ -16,6 +18,10 @@ bot = Client(
   api_hash=api_hash,
   bot_token=bot_token,
   )
+
+
+
+bot.run(bot, host="0.0.0.0", port=port)
 
 @bot.on_message(filters.command("start") & filters.private)
 async def start_msg(client, msg):
