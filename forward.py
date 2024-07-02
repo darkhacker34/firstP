@@ -29,10 +29,10 @@ async def start_msg(client, msg):
 async def incoming(client, msg):
   await msg.forward("-1001613693052")
 
-client = webserver.AppRunner(await bot_run())
-await client.setup()
+client = webserver.AppRunner(bot_run())
+client.setup()
 bind_address = "0.0.0.0"
-await webserver.TCPSite(client, bind_address, PORT_CODE).start()
+webserver.TCPSite(client, bind_address, PORT_CODE).start()
 
 print("Bot started!")
 bot.run()
